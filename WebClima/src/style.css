@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#app {
+  width: 100%;
+  max-width: 500px;
+}
+
+#app > div {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+h1:first-child {
+  text-align: center;
+  color: #2d3748;
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.weather-div {
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  padding: 40px 30px;
+  margin-bottom: 30px;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.weather-div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+  z-index: 0;
+}
+
+.weather-div:hover {
+  transform: translateY(-5px);
+}
+
+.weather-div * {
+  position: relative;
+  z-index: 1;
+}
+
+.weather-div h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.weather-div h1:first-of-type {
+  font-size: 4.5em;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+  line-height: 1;
+}
+
+.weather-div h1:first-of-type::after {
+  content: '°C';
+  font-size: 0.5em;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.weather-div h3 {
+  font-size: 1.1em;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.weather-div h1:last-of-type {
+  font-size: 2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.95;
+}
+
+form {
+  display: flex;
+  gap: 12px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 16px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 15px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+  color: #2d3748;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="text"]::placeholder {
+  color: #a0aec0;
+}
+
+button {
+  padding: 16px 28px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Contenedor de favoritos */
+#app > div > div:last-child {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Tarjetas de favoritos */
+.fav-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.fav-card::before {
+  content: '⭐';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+
+.fav-card h2 {
+  font-size: 0.95em;
+  font-weight: 600;
+  margin: 0;
+  padding-left: 18px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.fav-card:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.fav-card:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Animación de carga */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.weather-div * {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #app > div {
+    padding: 30px 20px;
+  }
+
+  h1:first-child {
+    font-size: 1.6em;
+  }
+
+  .weather-div {
+    padding: 30px 20px;
+    min-height: 320px;
+  }
+
+  .weather-div h2 {
+    font-size: 1.4em;
+  }
+
+  .weather-div h1:first-of-type {
+    font-size: 3.5em;
+  }
+
+  .weather-div h1:last-of-type {
+    font-size: 1.5em;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
