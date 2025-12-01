@@ -53,8 +53,8 @@ weather-forecast-app/
 
 1. **Clona solo la carpeta del proyecto**
    ```bash
-    git clone --no-checkout git@github.com:Amolnav/Curso_25_26_m.git
-    cd Curso_25_26_m
+    git clone --no-checkoutgit@github.com:Amolnav/Proyectos.git
+    cd Proyectos
     git sparse-checkout init --cone
     git sparse-checkout set WebClima
     git checkout
