@@ -23,6 +23,8 @@ Cada carpeta de proyecto incluye su propia documentación y archivos necesarios 
 | Proyecto | Descripción | Tecnologías | Estado |
 |----------|-------------|-------------|--------|
 | WebClima | App web para consultar el clima | HTML, CSS, JS | ✅ Completado |
+| CityBooker | Aplicación web para buscar y reservar hoteles | HTML, CSS, JS | ✅ Completado |
+
 
 *Nota: Esta tabla se irá actualizando conforme se agreguen nuevos proyectos.*
 
