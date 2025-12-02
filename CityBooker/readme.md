@@ -55,33 +55,43 @@ citybooker/
 ## 🛠️ Instalación
 
 1. **Clona el repositorio:**
-   ```bash
-    git clone --no-checkoutgit@github.com:Amolnav/Proyectos.git
-    cd Proyectos
-    git sparse-checkout init --cone
-    git sparse-checkout set CityBooker
-    git checkout
-   ```
+```bash
+   git clone --no-checkout git@github.com:Amolnav/Proyectos.git
+   cd Proyectos
+   git sparse-checkout init --cone
+   git sparse-checkout set CityBooker
+   git checkout
+```
 
 2. **Instala las dependencias:**
-   ```bash
+```bash
    npm install
-   ```
+```
 
 3. **Configura las variables de entorno:**
    - Copia el archivo `.env.example` y renómbralo a `.env`
    - Personaliza las keys del LocalStorage si lo deseas:
-   ```env
+```env
    VITE_STORAGE_INPUTS="yourKeyForInputs"
    VITE_STORAGE_RESERVA="yourKeyForReserva"
-   ```
+```
 
-4. **Inicia el servidor de desarrollo:**
-   ```bash
+4. **Inicia el servidor JSON (en una terminal):**
+```bash
+   npm run server:up
+```
+   El servidor se ejecutará en `http://localhost:3500`
+
+5. **Inicia el servidor de desarrollo (en otra terminal):**
+```bash
    npm run dev
-   ```
+```
 
-5. **Abre tu navegador en** `http://localhost:5173`
+6. **Abre tu navegador en** `http://localhost:5173`
+
+---
+
+**Nota:** Asegúrate de mantener ambos servidores ejecutándose simultáneamente para el correcto funcionamiento de la aplicación.
 
 ## 🎨 Uso
 
