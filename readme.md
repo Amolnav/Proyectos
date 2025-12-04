@@ -24,6 +24,7 @@ Cada carpeta de proyecto incluye su propia documentación y archivos necesarios 
 |----------|-------------|-------------|--------|
 | WebClima | App web para consultar el clima | HTML, CSS, JS | ✅ Completado |
 | CityBooker | Aplicación web para buscar y reservar hoteles | HTML, CSS, JS | ✅ Completado |
+| FoodieVoice | Gestor de reseñas de restaurantes con filtros y estadísticas | HTML, CSS, JS | ✅ Completado |
 
 
 *Nota: Esta tabla se irá actualizando conforme se agreguen nuevos proyectos.*
